@@ -1,6 +1,8 @@
 package com.example.kevin.buttongame;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             Button btn_B,
             Button btn_C
     ) {
+        Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vib.vibrate(100);
         String strCurrentTextViewLetter = textView_Letter.getText().toString();
         int intCurrentScore = Integer.parseInt(textView_Score.getText().toString());
 
