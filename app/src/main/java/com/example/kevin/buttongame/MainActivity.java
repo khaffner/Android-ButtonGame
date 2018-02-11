@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    Vibrator vib;
     // Declaring method GetRandomABC
     public static String GetRandomABC() {
         Random random = new Random();
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             Button btn_B,
             Button btn_C
     ) {
-        Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vib.vibrate(100);
         String strCurrentTextViewLetter = textView_Letter.getText().toString();
         int intCurrentScore = Integer.parseInt(textView_Score.getText().toString());
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     // Loading the activity, in practice starting the app.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
